@@ -112,7 +112,7 @@ function App() {
       title: "The Kick Store",
       description: "A dynamic and interactive web application built using React, JavaScript, CSS, and HTML. Designed and developed with a focus on seamless user experience and clean, responsive UI. This project showcases front-end development expertise and the ability to create user-friendly, efficient web applications.",
       image: "https://placehold.co/600x400/112240/64ffda?text=KickStore+%3C/%3E",
-      tech: ["React", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
+      tech: ["React", "JavaScript", "CSS", "HTML"],
       liveLink: null,
       githubLink: "https://github.com/RithikVerma/KickStore",
       category: "Personal Project"
