@@ -109,12 +109,12 @@ function App() {
       category: "Featured Project"
     },
     {
-      title: "Task Management System",
-      description: "Built a full-stack task management application with real-time updates and collaboration features. Implemented user authentication, role-based access control, and real-time notifications. Features include drag-and-drop task organization, deadline tracking, and team chat.",
-      image: "https://placehold.co/600x400/112240/64ffda?text=Task+Manager",
-      tech: ["React", "Firebase", "Material-UI", "Node.js", "Express", "MongoDB"],
-      liveLink: "#",
-      githubLink: "#",
+      title: "The Kick Store",
+      description: "A dynamic and interactive web application built using React, JavaScript, CSS, and HTML. Designed and developed with a focus on seamless user experience and clean, responsive UI. This project showcases front-end development expertise and the ability to create user-friendly, efficient web applications.",
+      image: "https://placehold.co/600x400/112240/64ffda?text=KickStore+%3C/%3E",
+      tech: ["React", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
+      liveLink: null,
+      githubLink: "https://github.com/RithikVerma/KickStore",
       category: "Personal Project"
     },
     {
@@ -122,8 +122,8 @@ function App() {
       description: "Crafted a modern portfolio website using React and Tailwind CSS. Features include smooth page transitions, responsive design, interactive UI elements, and optimized performance. Implemented SEO best practices and accessibility standards.",
       image: "https://placehold.co/600x400/112240/64ffda?text=Portfolio",
       tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-      liveLink: "#",
-      githubLink: "#",
+      liveLink: "https://rithik-portfoli0.vercel.app/",
+      githubLink: "https://github.com/RithikVerma/Portfolio",
       category: "Personal Project"
     }
   ]
@@ -139,19 +139,19 @@ function App() {
     {
       name: 'Backend Development',
       icon: CommandLineIcon,
-      description: 'Proficient in Node.js, Express, Java, and SQL. Experienced in designing RESTful APIs and managing databases.',
+      description: 'Proficient in , Java, and SQL. Experienced in designing and managing databases.',
       color: 'from-purple-500 to-pink-500'
     },
     {
       name: 'Tools & DevOps',
       icon: CpuChipIcon,
-      description: 'Skilled in Git, Docker, CI/CD pipelines, and cloud platforms (AWS, Firebase). Strong focus on automation and deployment optimization.',
+      description: 'Skilled in Git, Github and cloud platforms (AWS, Firebase). Strong focus on automation and deployment optimization.',
       color: 'from-green-500 to-emerald-500'
     },
     {
       name: 'Cloud Services',
       icon: CloudIcon,
-      description: 'Experience with AWS, Firebase, and GCP. Implemented scalable cloud solutions and managed cloud infrastructure.',
+      description: 'Experience with  Firebase. Implemented scalable cloud solutions and managed cloud infrastructure.',
       color: 'from-yellow-500 to-orange-500'
     }
   ]
@@ -472,29 +472,29 @@ function App() {
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-[#64ffda]">▹</span>
-                      React Native
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#64ffda]">▹</span>
-                      Node.js
-                    </li>
-                  </ul>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#64ffda]">▹</span>
                       Tailwind CSS
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-[#64ffda]">▹</span>
                       Java
                     </li>
+                  </ul>
+                  <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <span className="text-[#64ffda]">▹</span>
                       C/C++
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-[#64ffda]">▹</span>
-                      MySQL
+                       SQL/MySQL
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#64ffda]">▹</span>
+                      Firebase
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#64ffda]">▹</span>
+                      Github
                     </li>
                   </ul>
                 </div>
