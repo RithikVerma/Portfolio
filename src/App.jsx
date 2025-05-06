@@ -100,22 +100,33 @@ function App() {
   // Update the projects data with better descriptions and images
   const projects = [
     {
-      title: "UpSys Company Website",
-      description: "Designed and developed a modern company website for UpSys Technologies. Implemented responsive layouts, smooth animations, and optimized performance. The site features dynamic content management, interactive UI elements, and cross-browser compatibility.",
-      image: logo,
-      tech: ["React", "Tailwind CSS", "Framer Motion", "Firebase"],
-      liveLink: "https://upsys.in",
-      githubLink: null,
-      category: "Featured Project"
+      title: "FundingPe",
+      description: "A comprehensive mobile financial management application built with React Native and TypeScript. Features include modern UI components, cross-platform compatibility, SafeAreaView implementation, and robust navigation system. The app showcases professional purple-themed interface with optimized user experience and scalable architecture.",
+      image: "https://placehold.co/600x400/112240/64ffda?text=FundingPe",
+      tech: ["React Native", "JavaScript", "Postman", "Firebase", "React Library"],
+      liveLink: null,
+      githubLink: "https://github.com/RithikVerma/FundingPe",
+      category: "Featured Project",
+      role: "Mobile App Developer",
+      duration: "2024",
+      highlights: [
+        "Modern Mobile Architecture with React Native and TypeScript",
+        "Professional UI Theme with purple (#7B2AC2) interface",
+        "Centralized Navigation System with AppNavigator",
+        "Scalable Project Structure with modular components",
+        "TypeScript Integration for enhanced code reliability"
+      ]
     },
     {
       title: "The Kick Store",
       description: "A dynamic and interactive web application built using React, JavaScript, CSS, and HTML. Designed and developed with a focus on seamless user experience and clean, responsive UI. This project showcases front-end development expertise and the ability to create user-friendly, efficient web applications.",
-      image: "https://placehold.co/600x400/112240/64ffda?text=KickStore+%3C/%3E",
-      tech: ["React", "JavaScript", "CSS", "HTML"],
+      image: "https://placehold.co/600x400/112240/64ffda?text=%3C/%3E",
+      tech: ["React", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
       liveLink: null,
       githubLink: "https://github.com/RithikVerma/KickStore",
-      category: "Personal Project"
+      category: "Personal Project",
+      role: "Full Stack Developer",
+      duration: "2024"
     },
     {
       title: "Portfolio Website",
@@ -124,7 +135,20 @@ function App() {
       tech: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
       liveLink: "https://rithik-portfoli0.vercel.app/",
       githubLink: "https://github.com/RithikVerma/Portfolio",
-      category: "Personal Project"
+      category: "Personal Project",
+      role: "Designer & Developer",
+      duration: "2024"
+    },
+    {
+      title: "UpSys Company Website",
+      description: "Designed and developed a modern company website for UpSys Technologies. Implemented responsive layouts, smooth animations, and optimized performance. The site features dynamic content management, interactive UI elements, and cross-browser compatibility.",
+      image: logo,
+      tech: ["React", "Tailwind CSS", "Framer Motion", "Firebase"],
+      liveLink: "https://upsys.in",
+      githubLink: null,
+      category: "Featured Project",
+      role: "Lead Developer",
+      duration: "2023"
     }
   ]
 
@@ -192,10 +216,10 @@ function App() {
               times: [0, 0.6, 1],
               ease: "easeOut"
             }}
-            className="text-5xl font-bold relative z-10"
+            className="text-4xl md:text-5xl font-bold relative z-10"
           >
             <span className="bg-gradient-to-r from-[#64ffda] via-blue-500 to-purple-500 bg-clip-text text-transparent">
-              RV
+              RITHIK VERMA
             </span>
           </motion.div>
 
@@ -240,8 +264,8 @@ function App() {
               <div className="flex items-center justify-between h-16">
                 {/* Logo */}
                 <div className="relative group">
-                  <span className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent cursor-pointer">
-                    RV
+                  <span className="text-2xl font-mono font-bold bg-gradient-to-r from-[#64ffda] via-blue-500 to-purple-500 bg-clip-text text-transparent cursor-pointer">
+                    {'<RITHIK/>'}
                   </span>
                 </div>
 
@@ -708,14 +732,16 @@ function App() {
                         {/* Overlay */}
                         <div className="absolute inset-0 bg-[#0a192f]/80 group-hover:bg-transparent backdrop-blur-[2px] group-hover:backdrop-blur-0 transition-all duration-500">
                           <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-4">
-                            <a
-                              href={project.liveLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-3 bg-[#64ffda] text-[#0a192f] rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
-                            >
-                              <ArrowTopRightOnSquareIcon className="h-6 w-6" />
-                            </a>
+                            {project.liveLink && (
+                              <a
+                                href={project.liveLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-3 bg-[#64ffda] text-[#0a192f] rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
+                              >
+                                <ArrowTopRightOnSquareIcon className="h-6 w-6" />
+                              </a>
+                            )}
                             {project.githubLink && (
                               <a
                                 href={project.githubLink}
@@ -740,10 +766,15 @@ function App() {
                   >
                     <div className="space-y-6">
                       <div className="space-y-2">
-                        <p className="text-[#64ffda] font-mono text-sm tracking-wider">{project.category}</p>
+                        <div className="flex items-center gap-3">
+                          <p className="text-[#64ffda] font-mono text-sm tracking-wider">{project.category}</p>
+                          <div className="h-[1px] w-16 bg-[#64ffda]/20"></div>
+                          <p className="text-gray-400 font-mono text-sm">{project.duration}</p>
+                        </div>
                         <h3 className="text-3xl font-bold text-gray-200 group-hover:text-[#64ffda] transition-colors duration-300">
                           {project.title}
                         </h3>
+                        <p className="text-[#64ffda] font-mono text-sm">{project.role}</p>
                       </div>
 
                       {/* Project Description */}
@@ -752,6 +783,21 @@ function App() {
                           <p className="text-gray-400 leading-relaxed">
                             {project.description}
                           </p>
+                          
+                          {/* Project Highlights */}
+                          {project.highlights && (
+                            <div className="mt-4 space-y-2">
+                              <h4 className="text-[#64ffda] font-mono text-sm">Key Features:</h4>
+                              <ul className="space-y-2">
+                                {project.highlights.map((highlight, idx) => (
+                                  <li key={idx} className="flex items-start gap-2 text-gray-400">
+                                    <span className="text-[#64ffda] mt-1">▹</span>
+                                    <span className="text-sm">{highlight}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
                         </div>
                       </div>
 
@@ -770,15 +816,17 @@ function App() {
 
                       {/* Mobile Links */}
                       <div className="flex items-center gap-6 md:hidden">
-                        <a
-                          href={project.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-[#64ffda] hover:text-white transition-colors group"
-                        >
-                          <span className="font-mono text-sm">Visit Site</span>
-                          <ArrowTopRightOnSquareIcon className="h-4 w-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                        </a>
+                        {project.liveLink && (
+                          <a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-[#64ffda] hover:text-white transition-colors group"
+                          >
+                            <span className="font-mono text-sm">Visit Site</span>
+                            <ArrowTopRightOnSquareIcon className="h-4 w-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                          </a>
+                        )}
                         {project.githubLink && (
                           <a
                             href={project.githubLink}
@@ -875,7 +923,7 @@ function App() {
                 </svg>
               </a>
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/RithikVerma"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-200 transition-colors duration-300"

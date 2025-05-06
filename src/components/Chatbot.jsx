@@ -9,6 +9,84 @@ const Chatbot = () => {
   ]);
   const [input, setInput] = useState('');
 
+  // Personal data for the chatbot to use
+  const personalData = {
+    name: "Rithik Verma",
+    role: "Software Developer",
+    contact: {
+      email: "rverma8871@gmail.com",
+      phone: "+918770384600",
+      github: "https://github.com/RithikVerma",
+      portfolio: "https://rithik-portfoli0.vercel.app/"
+    },
+    skills: [
+      "React.js",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "Java",
+      "C/C++",
+      "SQL/MySQL",
+      "Firebase",
+      "Github"
+    ],
+    projects: [
+      {
+        name: "UpSys Company Website",
+        description: "Modern company website with responsive layouts and dynamic content management",
+        link: "https://upsys.in"
+      },
+      {
+        name: "The Kick Store",
+        description: "Dynamic e-commerce web application with clean UI",
+        github: "https://github.com/RithikVerma/KickStore"
+      },
+      {
+        name: "Portfolio Website",
+        description: "Modern portfolio with smooth transitions and responsive design",
+        link: "https://rithik-portfoli0.vercel.app/",
+        github: "https://github.com/RithikVerma/Portfolio"
+      }
+    ]
+  };
+
+  const generateResponse = (input) => {
+    const lowercaseInput = input.toLowerCase();
+    
+    // Check for different types of queries
+    if (lowercaseInput.includes('contact') || lowercaseInput.includes('email') || lowercaseInput.includes('phone')) {
+      return `You can reach Rithik at:
+Email: ${personalData.contact.email}
+Phone: ${personalData.contact.phone}
+Portfolio: ${personalData.contact.portfolio}`;
+    }
+    
+    if (lowercaseInput.includes('skill') || lowercaseInput.includes('technology') || lowercaseInput.includes('tech stack')) {
+      return `Rithik's key skills include: ${personalData.skills.join(', ')}`;
+    }
+    
+    if (lowercaseInput.includes('project') || lowercaseInput.includes('work')) {
+      return `Here are some of Rithik's notable projects:
+1. ${personalData.projects[0].name} - ${personalData.projects[0].description}
+2. ${personalData.projects[1].name} - ${personalData.projects[1].description}
+3. ${personalData.projects[2].name} - ${personalData.projects[2].description}`;
+    }
+    
+    if (lowercaseInput.includes('github')) {
+      return `You can find Rithik's work on GitHub: ${personalData.contact.github}`;
+    }
+
+    if (lowercaseInput.includes('hello') || lowercaseInput.includes('hi') || lowercaseInput.includes('hey')) {
+      return `Hello! I'm here to help you learn more about ${personalData.name}. Feel free to ask about his skills, projects, or contact information!`;
+    }
+
+    // Default response
+    return `I can help you learn more about ${personalData.name}. Try asking about:
+- Skills and technologies
+- Projects and work experience
+- Contact information
+- GitHub profile`;
+  };
+
   const handleSend = (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -16,10 +94,10 @@ const Chatbot = () => {
     // Add user message
     setMessages(prev => [...prev, { text: input, isBot: false }]);
     
-    // Simulate bot response
+    // Generate bot response
     setTimeout(() => {
       setMessages(prev => [...prev, {
-        text: "Thanks for your message! Rithik will get back to you soon.",
+        text: generateResponse(input),
         isBot: true
       }]);
     }, 1000);
@@ -38,8 +116,8 @@ const Chatbot = () => {
             className="absolute bottom-20 right-0 w-80 h-96 bg-gray-900 rounded-2xl shadow-2xl border border-gray-800 overflow-hidden"
           >
             {/* Chat Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4">
-              <h3 className="text-white font-medium">Chat with me</h3>
+            <div className="bg-gradient-to-r from-[#64ffda] to-blue-500 p-4">
+              <h3 className="text-gray-900 font-medium">Chat with Rithik's Assistant</h3>
             </div>
 
             {/* Messages */}
@@ -53,7 +131,7 @@ const Chatbot = () => {
                     className={`max-w-[80%] p-3 rounded-2xl ${
                       msg.isBot
                         ? 'bg-gray-800 text-white'
-                        : 'bg-blue-600 text-white'
+                        : 'bg-[#64ffda] text-gray-900'
                     }`}
                   >
                     {msg.text}
@@ -70,11 +148,11 @@ const Chatbot = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Type a message..."
-                  className="flex-1 bg-gray-800 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 bg-gray-800 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#64ffda]"
                 />
                 <button
                   type="submit"
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="bg-[#64ffda] text-gray-900 px-4 py-2 rounded-lg hover:bg-[#64ffda]/80 transition-colors"
                 >
                   Send
                 </button>
@@ -89,7 +167,7 @@ const Chatbot = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+        className="bg-gradient-to-r from-[#64ffda] to-blue-500 text-gray-900 p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow"
       >
         {isOpen ? (
           <XMarkIcon className="h-6 w-6" />
